@@ -9,7 +9,7 @@ public class Box extends TileItem {
         super(filename);
     }
 
-    public boolean isBox() {
-        return true;
+    public TileType getTileType() {
+        return TileType.Box;
     }
 }

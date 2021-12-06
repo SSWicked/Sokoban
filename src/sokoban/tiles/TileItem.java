@@ -24,7 +24,7 @@ public class TileItem {
         setImage(image);
     }
 
-    public boolean isBox() {
-        return false;
+    public TileType getTileType() {
+        return TileType.None;
     }
 }

@@ -8,4 +8,7 @@ public class Wall extends TileItem {
     public Wall(String filename) {
         super(filename);
     }
+    public TileType getTileType() {
+        return TileType.Wall;
+    }
 }
