@@ -1,6 +1,5 @@
 package sokoban;
 
-import sokoban.tiles.Player;
 import sokoban.tiles.TileItem;
 
 import java.io.BufferedReader;

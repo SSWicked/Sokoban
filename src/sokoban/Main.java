@@ -1,7 +1,6 @@
 package sokoban;
 
 import java.io.IOException;
-import gui.*;
 
 public class Main {
     public static void main(String[] args) {

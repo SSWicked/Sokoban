@@ -6,7 +6,9 @@ import java.awt.*;
 public class TileItem {
     private Image image;
 
-    public TileItem(String filename) {initItem(filename);}
+    public TileItem(String filename) {
+        initItem(filename);
+    }
 
     public Image getImage() {
         return image;
@@ -21,5 +23,8 @@ public class TileItem {
         Image image = icon.getImage();
         setImage(image);
     }
-    public boolean isBox() {return false;}
+
+    public boolean isBox() {
+        return false;
+    }
 }
