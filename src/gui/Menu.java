@@ -1,29 +1,42 @@
 package gui;
-
+//This is some basic shit about swing gui
+///TODO WORK ON GUI
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Menu extends JPanel {
+public class Menu extends JFrame implements ActionListener {
+
+    private final JMenuItem open = new JMenuItem("Open");
+    private final JMenuItem cancel = new JMenuItem("Cancel");
 
     public Menu() {
-        //construct components
-        JButton levelSelector = new JButton("Level Selector");
-        JButton hiScores = new JButton("Hi-Scores");
-        JButton quit = new JButton("Quit");
+        JFrame frame = new JFrame("Sokoban");
+        JMenuBar menuBar = new JMenuBar();
+        JMenu jMenu = new JMenu("File");
 
-        //adjust size and set layout
-        setPreferredSize(new Dimension(1000, 575));
-        setLayout(null);
+        open.addActionListener(this);
+        cancel.addActionListener(this);
+        jMenu.add(open);
+        jMenu.add(cancel);
+        menuBar.add(jMenu);
 
-        //add components
-        add(levelSelector);
-        add(hiScores);
-        add(quit);
+        frame.setJMenuBar(menuBar);
+        frame.setSize(300,100);
+        frame.setVisible(true);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == open) {
+            JFileChooser fileChooser = new JFileChooser(".");
+            fileChooser.showOpenDialog(null);
+        }
+        if(e.getSource() == cancel) {
+            System.exit(0);
+        }
+    }
 
-        //set component bounds (only needed by Absolute Positioning)
-        levelSelector.setBounds(175, 230, 225, 85);
-        hiScores.setBounds(500, 230, 225, 85);
-        quit.setBounds(340, 350, 225, 85);
+    public static void main(String[] args) {
+        new Menu();
     }
 }
-
