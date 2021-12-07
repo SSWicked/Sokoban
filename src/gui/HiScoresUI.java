@@ -18,6 +18,7 @@ public class HiScoresUI extends JFrame {
      */
     public HiScoresUI(HiScores input) {
         super("Hi-Scores");
+        this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.setMinimumSize(new Dimension(400,400));
         table = new JTable(input);

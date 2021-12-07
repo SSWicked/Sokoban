@@ -76,7 +76,7 @@ public class InGame extends JPanel {
         frame.setJMenuBar(menuBar);
         frame.add(panel);
         frame.pack();
-        frame.setLocationByPlatform(true);
+        frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
     }
