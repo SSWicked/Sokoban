@@ -8,9 +8,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+/**
+ * LevelSelectorScreen class that extends JFrame.
+ * Responsible for creating the levelselector interface, where the player inputs their name, the name of the level and start the game.
+ */
 public class LevelSelectorScreen extends JFrame implements ActionListener {
     JFrame frame = new JFrame("Level");
-
+    /**
+     * Constructor for a LevelSelectorScreen.
+     * Consists of 4 JButtons on a JPanel, and 2 JTextFields.
+     */
     public LevelSelectorScreen() {
         frame.setSize(800, 600);
         frame.setLocationRelativeTo(null);
@@ -19,10 +26,9 @@ public class LevelSelectorScreen extends JFrame implements ActionListener {
 
         JPanel panel = new JPanel();
         panel.setSize(800, 600);
-        panel.setLayout(new GridLayout(3, 2));
+        panel.setLayout(new GridLayout(2, 2));
         panel.setAlignmentX(CENTER_ALIGNMENT);
 
-        ///TODO HISCORES
         JTextField name = new JTextField();
         JTextField level = new JTextField();
         JButton start = new JButton("Start Game");

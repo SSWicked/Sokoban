@@ -7,6 +7,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Board class that is used for file processes.
+ * Reads in a file and stores important data.
+ */
 public class Board {
 
     private Coord Player = new Coord();
@@ -15,9 +19,18 @@ public class Board {
     private int numBox = 0;
     private TileItem[][] boardElements;
 
+    /**
+     * Default constructor for a Board Object.
+     */
     public Board() {
     }
 
+    /**
+     * Constructor for a Board Object that gets a file as parameter.
+     * Reads a file in, and creates a board instance which can be indexed.
+     * @param levelName - name of the processed file
+     * @throws IOException - Throws IOException in case of non-existent files
+     */
     public Board(String levelName) throws IOException {
         String line;
         int x = 0;
@@ -54,39 +67,84 @@ public class Board {
         }
     }
 
+    /**
+     * Getter for the Player Object on the board.
+     * @return - returns the coordinates of a Player Object
+     */
     public Coord getPlayer() {
         return Player;
     }
 
+    /**
+     * Setter for the Player Object on the board.
+     * @param player - As a parameter given to the method, the coordinates of the
+     *               Player are settable
+     */
     public void setPlayer(Coord player) {
         Player = player;
     }
 
+    /**
+     * Getter for the board instance's height attribute.
+     * @return - returns the height of a board object
+     */
     public int getHeight() {
         return Height;
     }
 
-    public void setHeight(int height) {
-        Height = height;
-    }
-
-    public int getNumBox() {
-        return numBox;
-    }
-
-    public void setNumBox(int numBox) {
-        this.numBox = numBox;
-    }
-
+    /**
+     * Getter for the board instance's width attribute.
+     * @return - returns the width of a board object.
+     */
     public int getWidth() {
         return Width;
     }
 
+    /**
+     * Getter for the TileItem Array, in which, the program stores the TileTypes of a file.
+     * @return - returns a TileItem[][] filled with Items casted from chars.
+     */
+    public TileItem[][] getBoardElements() {
+        return boardElements;
+    }
+
+    /**
+     * Setter for a Board Object's Width attribute.
+     * @param width - integer; the size of the board considering the axis x
+     */
     public void setWidth(int width) {
         Width = width;
     }
 
-    public TileItem[][] getBoardElements() {
-        return boardElements;
+    /**
+     * Setter for a Board Object's Heigth attribute.
+     * @param height - integer; the size of the board considering the axis y
+     */
+    public void setHeight(int height) {
+        Height = height;
+    }
+
+    /**
+     * Getter for the number of Box Objects placed on the current Board.
+     * @return - returns an integer, representing the number of boxes
+     */
+    public int getNumBox() {
+        return numBox;
+    }
+
+    /**
+     * Setter for the number of Box Objects placed on the Board.
+     * @param numBox - integer, sets this many into the numBox attribute.
+     */
+    public void setNumBox(int numBox) {
+        this.numBox = numBox;
+    }
+
+    /**
+     * Setter for an item in the TileItem 2D Array. Specific TileItem can be updated via.
+     * @param boardElements - TileItem[][] tells the exavt position, and type
+     */
+    public void setBoardElements(TileItem[][] boardElements) {
+        this.boardElements = boardElements;
     }
 }

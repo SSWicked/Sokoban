@@ -1,13 +1,22 @@
 package gui;
-///TODO WORK ON GUI
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Menu class, responsible for the graphic implementation of the main Menu.
+ * There are 2 JButtons on this interface; a Start game and an Exit.
+ * Apart from that it shows the name of the game (Sokoban) as a title.
+ */
 public class Menu extends JFrame implements ActionListener {
     private final JFrame frame = new JFrame("Sokoban");
+
+    /**
+     * Constructor for a Menu.
+     * Sets the needed attributes, and initializes the game.
+     */
 
     public Menu() {
         //Frame
