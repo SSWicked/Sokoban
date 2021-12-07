@@ -11,4 +11,9 @@ public class Player extends TileItem {
     public TileType getTileType() {
         return TileType.Player;
     }
+
+    @Override
+    public String toString() {
+        return "@";
+    }
 }

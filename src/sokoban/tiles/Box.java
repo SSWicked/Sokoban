@@ -12,4 +12,9 @@ public class Box extends TileItem {
     public TileType getTileType() {
         return TileType.Box;
     }
+
+    @Override
+    public String toString() {
+        return "$";
+    }
 }

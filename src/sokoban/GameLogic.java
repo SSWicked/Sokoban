@@ -10,6 +10,7 @@ public class GameLogic extends KeyAdapter {
     private final boolean isFinished = false;
     private String levelName;
     private Board board;
+    private int steps = 0;
     private final TileItem BoxOnGoal = new BoxOnGoal();
     private final TileItem Wall = new Wall();
     private final TileItem Goal = new Goal();
@@ -40,15 +41,16 @@ public class GameLogic extends KeyAdapter {
         return counter;
     }
 
-    public Coord moveLogic(KeyEvent e, Board board, Coord posPlayer) {
+    public Coord moveLogic(KeyEvent e, Board board) {
         if (isFinished()) {
             return null;
         }
 
         Coord move = new Coord();
         Coord player = new Coord();
-        player.setX(posPlayer.getX());
-        player.setY(posPlayer.getY());
+        player.setY(board.getPlayer().getY());
+        player.setX(board.getPlayer().getX());
+
         int key = e.getKeyCode();
 
         switch (key) {
@@ -82,27 +84,27 @@ public class GameLogic extends KeyAdapter {
         newPosition.setY(player.getY() + move.getY());
         TileItem[][] boardElements = board.getBoardElements();
 
-        if (!TileType.Wall.equals(boardElements[newPosition.getY()][newPosition.getX()].getTileType())) {
+        if (!(TileType.Wall.toString().equals(boardElements[newPosition.getX()][newPosition.getY()].getTileType().toString()))) {
 
-            if (TileType.Box.equals(boardElements[newPosition.getY()][newPosition.getX()].getTileType()) || TileType.BoxOnGoal.equals(boardElements[newPosition.getY()][newPosition.getX()].getTileType())) {
+            if (TileType.Box.toString().equals(boardElements[newPosition.getX()][newPosition.getY()].getTileType().toString()) || TileType.BoxOnGoal.toString().equals(boardElements[newPosition.getX()][newPosition.getY()].getTileType().toString())) {
 
-                if (TileType.Box.equals(boardElements[newPosition.getY() + move.getY()][newPosition.getX() + move.getY()].getTileType())
-                        || TileType.Wall.equals(boardElements[newPosition.getY() + move.getY()][newPosition.getX() + move.getX()].getTileType())
-                        || TileType.BoxOnGoal.equals(boardElements[newPosition.getY() + move.getY()][newPosition.getX() + move.getX()].getTileType())) {
+                if (TileType.Box.toString().equals(boardElements[newPosition.getX() + move.getX()][newPosition.getY() + move.getY()].getTileType().toString())
+                        || TileType.Wall.toString().equals(boardElements[newPosition.getX() + move.getX()][newPosition.getY() + move.getY()].getTileType().toString())
+                        || TileType.BoxOnGoal.toString().equals(boardElements[newPosition.getX() + move.getX()][newPosition.getY() + move.getY()].getTileType().toString())) {
                     return player;
                 } else {
-                    boardElements[newPosition.getY() + move.getY()][newPosition.getX() + move.getX()] = TileType.Goal.equals(boardElements[newPosition.getY() + move.getY()][newPosition.getX() + move.getX()].getTileType()) ? BoxOnGoal : Box;
-                    boardElements[newPosition.getY()][newPosition.getX()] = TileType.BoxOnGoal.equals(boardElements[newPosition.getY()][newPosition.getX()].getTileType()) ? Goal : Path;
+                    boardElements[newPosition.getX() + move.getX()][newPosition.getY() + move.getY()] = TileType.Goal.toString().equals(boardElements[newPosition.getX() + move.getX()][newPosition.getY() + move.getY()].getTileType().toString()) ? BoxOnGoal : Box;
+                    boardElements[newPosition.getX()][newPosition.getY()] = TileType.BoxOnGoal.toString().equals(boardElements[newPosition.getX()][newPosition.getY()].getTileType().toString()) ? Goal : Path;
                 }
             }
-            boardElements[player.getY()][player.getX()] = TileType.Player.equals(boardElements[player.getY()][player.getX()].getTileType()) ? Path : Goal;
+            boardElements[player.getX()][player.getY()] = TileType.Player.toString().equals(boardElements[player.getX()][player.getY()].getTileType().toString()) ? Path : Goal;
             player.setX(newPosition.getX());
             player.setY(newPosition.getY());
 
-            if (TileType.Path.equals(boardElements[newPosition.getY()][newPosition.getX()].getTileType())) {
-                boardElements[player.getY()][player.getX()] = Player;
-            } else if (TileType.Goal.equals(boardElements[newPosition.getY()][newPosition.getX()].getTileType())) {
-                boardElements[player.getY()][player.getX()] = PlayerOnGoal;
+            if (TileType.Path.toString().equals(boardElements[newPosition.getX()][newPosition.getY()].getTileType().toString())) {
+                boardElements[player.getX()][player.getY()] = Player;
+            } else if (TileType.Goal.toString().equals(boardElements[newPosition.getX()][newPosition.getY()].getTileType().toString())) {
+                boardElements[player.getX()][player.getY()] = PlayerOnGoal;
             }
         }
         return player;
@@ -110,5 +112,13 @@ public class GameLogic extends KeyAdapter {
 
     public boolean isFinished() {
         return board.getNumBox() == 0;
+    }
+
+    public int getSteps() {
+        return steps;
+    }
+
+    public void setSteps(int steps) {
+        this.steps = steps;
     }
 }

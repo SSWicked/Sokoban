@@ -11,4 +11,9 @@ public class BoxOnGoal extends TileItem {
     public TileType getTileType() {
         return TileType.BoxOnGoal;
     }
+
+    @Override
+    public String toString() {
+        return "*";
+    }
 }

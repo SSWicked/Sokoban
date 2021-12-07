@@ -11,4 +11,9 @@ public class Goal extends TileItem {
     public TileType getTileType() {
         return TileType.Goal;
     }
+
+    @Override
+    public String toString() {
+        return ".";
+    }
 }

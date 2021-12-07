@@ -11,4 +11,9 @@ public class Path extends TileItem {
     public TileType getTileType() {
         return TileType.Path;
     }
+
+    @Override
+    public String toString() {
+        return " ";
+    }
 }

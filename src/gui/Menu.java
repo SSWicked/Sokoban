@@ -1,42 +1,51 @@
 package gui;
-//This is some basic shit about swing gui
 ///TODO WORK ON GUI
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Menu extends JFrame implements ActionListener {
-
-    private final JMenuItem open = new JMenuItem("Open");
-    private final JMenuItem cancel = new JMenuItem("Cancel");
-
+    private final JFrame frame = new JFrame("Sokoban");
     public Menu() {
-        JFrame frame = new JFrame("Sokoban");
-        JMenuBar menuBar = new JMenuBar();
-        JMenu jMenu = new JMenu("File");
+        //Frame
+        frame.setSize(800,400);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        open.addActionListener(this);
-        cancel.addActionListener(this);
-        jMenu.add(open);
-        jMenu.add(cancel);
-        menuBar.add(jMenu);
+        //Panel
+        JPanel panel = new JPanel();
+        panel.setSize(800,400);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        frame.setJMenuBar(menuBar);
-        frame.setSize(300,100);
+        //Title
+        JLabel sokoTitle = new JLabel("Sokoban");
+        sokoTitle.setFont(new Font("Monospaced",(Font.BOLD+Font.ITALIC),64));
+        sokoTitle.setAlignmentX(CENTER_ALIGNMENT);
+
+        //Buttons (start, hiscores, exit)
+        JButton start = new JButton("Level Select");
+        start.setAlignmentX(CENTER_ALIGNMENT);
+        start.addActionListener(e -> {
+            new LevelSelectorScreen();
+            frame.dispose();
+        });
+        JButton exit = new JButton("Exit Game");
+        exit.setAlignmentX(CENTER_ALIGNMENT);
+        exit.addActionListener(e -> System.exit(0));
+
+        //Adding everything to the JPanel
+        panel.add(sokoTitle);
+        panel.add(Box.createRigidArea(new Dimension(20,80)));
+        panel.add(start);
+        panel.add(Box.createRigidArea(new Dimension(20,40)));
+        panel.add(exit);
+        frame.add(panel);
         frame.setVisible(true);
+
     }
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == open) {
-            JFileChooser fileChooser = new JFileChooser(".");
-            fileChooser.showOpenDialog(null);
-        }
-        if(e.getSource() == cancel) {
-            System.exit(0);
-        }
-    }
-
-    public static void main(String[] args) {
-        new Menu();
-    }
+    public void actionPerformed(ActionEvent e) { }
 }

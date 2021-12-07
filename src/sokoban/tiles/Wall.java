@@ -11,4 +11,9 @@ public class Wall extends TileItem {
     public TileType getTileType() {
         return TileType.Wall;
     }
+
+    @Override
+    public String toString() {
+        return "#";
+    }
 }
