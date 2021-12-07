@@ -8,6 +8,7 @@ public class PlayerOnGoal extends TileItem {
     public PlayerOnGoal(String filename) {
         super(filename);
     }
+
     public TileType getTileType() {
         return TileType.PlayerOnGoal;
     }

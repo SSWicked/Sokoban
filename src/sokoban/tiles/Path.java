@@ -8,6 +8,7 @@ public class Path extends TileItem {
     public Path(String filename) {
         super(filename);
     }
+
     public TileType getTileType() {
         return TileType.Path;
     }

@@ -8,9 +8,6 @@ import java.awt.event.KeyEvent;
 public class GameLogic extends KeyAdapter {
 
     private final boolean isFinished = false;
-    private String levelName;
-    private Board board;
-    private int steps = 0;
     private final TileItem BoxOnGoal = new BoxOnGoal();
     private final TileItem Wall = new Wall();
     private final TileItem Goal = new Goal();
@@ -18,6 +15,9 @@ public class GameLogic extends KeyAdapter {
     private final TileItem Path = new Path();
     private final TileItem Player = new Player();
     private final TileItem PlayerOnGoal = new PlayerOnGoal();
+    private String levelName;
+    private Board board;
+    private int steps = 0;
 
     public GameLogic() {
     }

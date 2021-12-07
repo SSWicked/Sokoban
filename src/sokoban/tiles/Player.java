@@ -8,6 +8,7 @@ public class Player extends TileItem {
     public Player(String filename) {
         super(filename);
     }
+
     public TileType getTileType() {
         return TileType.Player;
     }

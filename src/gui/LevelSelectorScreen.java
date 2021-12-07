@@ -12,14 +12,14 @@ public class LevelSelectorScreen extends JFrame implements ActionListener {
     JFrame frame = new JFrame("Level");
 
     public LevelSelectorScreen() {
-        frame.setSize(800,600);
+        frame.setSize(800, 600);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setResizable(false);
 
         JPanel panel = new JPanel();
-        panel.setSize(800,600);
-        panel.setLayout(new GridLayout(3,2));
+        panel.setSize(800, 600);
+        panel.setLayout(new GridLayout(3, 2));
         panel.setAlignmentX(CENTER_ALIGNMENT);
 
         ///TODO HISCORES
@@ -33,12 +33,12 @@ public class LevelSelectorScreen extends JFrame implements ActionListener {
             name.getText();
             level.getText();
             try {
-                Board played = new Board("src/res/" + level.getText()+".txt");
-                InGame.createGui(played,name.getText());
+                Board played = new Board("src/res/" + level.getText() + ".txt");
+                InGame.createGui(played, name.getText());
                 frame.dispose();
             } catch (IOException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(getParent(),"Invalid input!");
+                JOptionPane.showMessageDialog(getParent(), "Invalid input!");
             }
         });
         back.addActionListener(e -> {
@@ -55,6 +55,7 @@ public class LevelSelectorScreen extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) { }
+    public void actionPerformed(ActionEvent e) {
+    }
 }
 

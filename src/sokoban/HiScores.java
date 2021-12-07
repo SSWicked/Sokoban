@@ -8,6 +8,7 @@ import java.util.List;
 
 public class HiScores extends AbstractTableModel {
     private List<Score> scoreList;
+
     private HiScores() throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("scores.dat"));
         scoreList = (List<Score>) objectInputStream.readObject();

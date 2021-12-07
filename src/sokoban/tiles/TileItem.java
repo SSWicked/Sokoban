@@ -27,6 +27,7 @@ public class TileItem {
     public TileType getTileType() {
         return TileType.None;
     }
+
     public String toString() {
         return "rossz";
     }

@@ -8,6 +8,7 @@ public class Goal extends TileItem {
     public Goal(String filename) {
         super(filename);
     }
+
     public TileType getTileType() {
         return TileType.Goal;
     }

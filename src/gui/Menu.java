@@ -8,21 +8,22 @@ import java.awt.event.ActionListener;
 
 public class Menu extends JFrame implements ActionListener {
     private final JFrame frame = new JFrame("Sokoban");
+
     public Menu() {
         //Frame
-        frame.setSize(800,400);
+        frame.setSize(800, 400);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Panel
         JPanel panel = new JPanel();
-        panel.setSize(800,400);
+        panel.setSize(800, 400);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
         //Title
         JLabel sokoTitle = new JLabel("Sokoban");
-        sokoTitle.setFont(new Font("Monospaced",(Font.BOLD+Font.ITALIC),64));
+        sokoTitle.setFont(new Font("Monospaced", (Font.BOLD + Font.ITALIC), 64));
         sokoTitle.setAlignmentX(CENTER_ALIGNMENT);
 
         //Buttons (start, hiscores, exit)
@@ -38,14 +39,16 @@ public class Menu extends JFrame implements ActionListener {
 
         //Adding everything to the JPanel
         panel.add(sokoTitle);
-        panel.add(Box.createRigidArea(new Dimension(20,80)));
+        panel.add(Box.createRigidArea(new Dimension(20, 80)));
         panel.add(start);
-        panel.add(Box.createRigidArea(new Dimension(20,40)));
+        panel.add(Box.createRigidArea(new Dimension(20, 40)));
         panel.add(exit);
         frame.add(panel);
         frame.setVisible(true);
 
     }
+
     @Override
-    public void actionPerformed(ActionEvent e) { }
+    public void actionPerformed(ActionEvent e) {
+    }
 }

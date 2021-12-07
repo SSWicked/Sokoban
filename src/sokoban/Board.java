@@ -57,27 +57,35 @@ public class Board {
     public Coord getPlayer() {
         return Player;
     }
+
     public void setPlayer(Coord player) {
         Player = player;
     }
+
     public int getHeight() {
         return Height;
     }
+
     public void setHeight(int height) {
         Height = height;
     }
+
     public int getNumBox() {
         return numBox;
     }
+
     public void setNumBox(int numBox) {
         this.numBox = numBox;
     }
+
     public int getWidth() {
         return Width;
     }
+
     public void setWidth(int width) {
         Width = width;
     }
+
     public TileItem[][] getBoardElements() {
         return boardElements;
     }
