@@ -19,7 +19,7 @@ public class HiScores extends AbstractTableModel {
      * This is only whole with HiScoresUI only.
      */
     public HiScores() {
-        ObjectInputStream objectInputStream = null;
+        ObjectInputStream objectInputStream;
         try {
             objectInputStream = new ObjectInputStream(new FileInputStream("src/res/scores.dat"));
             scoreList = (List<Score>) objectInputStream.readObject();
@@ -38,7 +38,6 @@ public class HiScores extends AbstractTableModel {
      * Adds a new Score to the HiScores List
      * @param playerName - String; name of the player (or whatever the input is)
      * @param steps - int; steps made to finish a game
-     * @throws IOException
      */
     public void addScore(String playerName, int steps) throws IOException {
         scoreList.add(new Score(playerName,steps));

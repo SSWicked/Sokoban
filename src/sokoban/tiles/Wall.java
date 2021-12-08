@@ -6,7 +6,7 @@ package sokoban.tiles;
 public class Wall extends TileItem {
     /**
      * Default constructor for a Wall Object.
-     * By filename it gets an Image which is used in the graphic interfaces.
+     * By filename, it gets an Image which is used in the graphic interfaces.
      */
     public Wall() {
         super("src/res/images/Wall.png");

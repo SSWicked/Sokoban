@@ -14,7 +14,6 @@ public class TileFactory {
      */
     public static TileItem createTile(char tileType) {
         return switch (tileType) {
-            case '#' -> new Wall();
             case '*' -> new BoxOnGoal();
             case ' ' -> new Path();
             case '.' -> new Goal();

@@ -7,7 +7,7 @@ package sokoban.tiles;
 public class Box extends TileItem {
     /**
      * Default constructor for a Box Object.
-     * By filename it gets an Image which is used in the graphic interfaces.
+     * By filename, it gets an Image which is used in the graphic interfaces.
      */
     public Box() {
         super("src/res/images/basicBox.png");

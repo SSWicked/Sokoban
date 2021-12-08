@@ -6,7 +6,7 @@ package sokoban.tiles;
 public class Player extends TileItem {
     /**
      * Default constructor for a Player Object.
-     * By filename it gets an Image which is used in the graphic interfaces.
+     * By filename, it gets an Image which is used in the graphic interfaces.
      */
     public Player() {
         super("src/res/images/player.png");

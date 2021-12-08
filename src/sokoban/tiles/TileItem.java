@@ -56,7 +56,7 @@ public class TileItem {
 
     /**
      * Overridden toString method, for comparison logic.
-     * As this tileType sholdn't exist regarding the game it
+     * As this tileType shouldn't exist regarding the game it
      * @return - returns a String "rossz", meaning faulty in Hungarian.
      */
     public String toString() {

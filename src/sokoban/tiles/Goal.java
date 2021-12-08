@@ -6,7 +6,7 @@ package sokoban.tiles;
 public class Goal extends TileItem {
     /**
      * Default constructor for a Goal Object.
-     * By filename it gets an Image which is used in the graphic interfaces.
+     * By filename, it gets an Image which is used in the graphic interfaces.
      */
     public Goal() {
         super("src/res/images/GoalOnTile.png");

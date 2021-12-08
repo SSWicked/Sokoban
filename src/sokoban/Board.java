@@ -16,7 +16,6 @@ public class Board {
     private Coord Player = new Coord();
     private int Width = 0;
     private int Height = 0;
-    private int numBox = 0;
     private TileItem[][] boardElements;
 
     /**
@@ -53,10 +52,6 @@ public class Board {
                         boardElements[x][y] = TileFactory.createTile(tile);
                     }
                     case '\n' -> {
-                    }
-                    case '$' -> {
-                        numBox++;
-                        boardElements[x][y] = TileFactory.createTile(tile);
                     }
                     default -> boardElements[x][y] = TileFactory.createTile(tile);
                 }
@@ -102,7 +97,7 @@ public class Board {
 
     /**
      * Getter for the TileItem Array, in which, the program stores the TileTypes of a file.
-     * @return - returns a TileItem[][] filled with Items casted from chars.
+     * @return - returns a TileItem[][] filled with Items cast from chars.
      */
     public TileItem[][] getBoardElements() {
         return boardElements;
@@ -117,34 +112,10 @@ public class Board {
     }
 
     /**
-     * Setter for a Board Object's Heigth attribute.
+     * Setter for a Board Object's Height attribute.
      * @param height - integer; the size of the board considering the axis y
      */
     public void setHeight(int height) {
         Height = height;
-    }
-
-    /**
-     * Getter for the number of Box Objects placed on the current Board.
-     * @return - returns an integer, representing the number of boxes
-     */
-    public int getNumBox() {
-        return numBox;
-    }
-
-    /**
-     * Setter for the number of Box Objects placed on the Board.
-     * @param numBox - integer, sets this many into the numBox attribute.
-     */
-    public void setNumBox(int numBox) {
-        this.numBox = numBox;
-    }
-
-    /**
-     * Setter for an item in the TileItem 2D Array. Specific TileItem can be updated via.
-     * @param boardElements - TileItem[][] tells the exavt position, and type
-     */
-    public void setBoardElements(TileItem[][] boardElements) {
-        this.boardElements = boardElements;
     }
 }

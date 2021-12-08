@@ -6,7 +6,7 @@ package sokoban.tiles;
 public class Path extends TileItem {
     /**
      * Default constructor for a Path Object.
-     * By filename it gets an Image which is used in the graphic interfaces.
+     * By filename, it gets an Image which is used in the graphic interfaces.
      */
     public Path() {
         super("src/res/images/Tile.png");
